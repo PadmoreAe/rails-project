@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @signboard.name %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @signboard.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @signboard.height %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @signboard.address %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @signboard.owner_id %>
+</p>
+
+<%= link_to 'Edit', edit_signboard_path(@signboard) %> |
+<%= link_to 'Back', signboards_path %>

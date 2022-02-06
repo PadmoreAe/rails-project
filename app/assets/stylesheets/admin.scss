@@ -1,0 +1,440 @@
+// Place all the styles related to the Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200,300,400,500,600');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+}
+.sidebar{
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    background: rgb(76, 209, 209);
+    transition: all 0.5s ease;
+}
+.sidebar.active{
+    width: 60px;
+}
+.sidebar .logo-details{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.sidebar .logo-details i{
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    min-width: 90px;
+    text-align: center;
+    margin-top: 10px;
+}
+.sidebar .logo-details .logo_name{
+    font-size: 23px;
+    font-weight: 500;
+    color: #fff;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+.sidebar .nav-links{
+    margin-top: 30px;
+}
+.sidebar .nav-links li{
+    height: 45px;
+    width: 100%;
+    list-style: none;
+}
+.sidebar .nav-links li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    
+}
+.sidebar .nav-links li a:hover{
+    background: rgb(0, 0, 0); 
+}
+.sidebar .nav-links li a i{
+    min-width: 30px;
+    text-align: left;
+    color: #fff;
+    font-size: 20px;
+}
+.sidebar .nav-links li a .link_name{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+/*Home section CSS */
+.home-section{
+    background: #cecfbd;
+    position: relative;
+    min-height: 100vh;
+    width: calc(100% - 240px);
+    left: 240px;
+    transition: all 0.5s ease;
+}
+.sidebar.active ~ .home-section{
+    width: calc(100% - 600px);
+    left: 60px;
+}
+.home-section nav{
+    position: fixed;
+    width: calc(100% - 240px);
+    left: 240px;
+    height: 60px;
+    background: #fff;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidebar.active ~ .home-section nav{
+    width: calc(100% 60px);
+    left: 60px;
+}
+.navbar-toggler{
+    height: 80px;
+    background: rgb(255, 255, 255);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.home-section nav .sidebar-button{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+.home-section nav .sidebar-button i{
+    font-size: 35px;
+    margin-right: 10px;
+}
+.home-section nav .search-box{
+    background: rgb(255, 255, 255);
+    height: 50px;
+    width: 500px;
+    margin: 0 20px;
+    position: relative;
+}
+nav .search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 17px;
+    background: #ffffff;
+    border: 2px solid #ffc1c1;
+    outline: flex;
+}
+nav .search-box .bi-search{
+    position: absolute;
+    right: -48px;
+    top: 0%;
+    transform: translateY(-50);
+    height: 50px;
+    width: 50px;
+    background: #ffffff;
+    border-radius: 6px;
+    color: rgb(14, 127, 219);
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    border: 2px solid #ffc1c1;
+}
+.home-section nav .search-box .profile-details{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    min-width: 190px;
+    background: #F5F6FA;
+    border: 2px solid #EFEEF1;
+    border-radius: 6px;
+    padding: 0 15px 0 20px;
+}
+nav .profile-details img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+nav .profile-details .admin_name{
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+nav .profile-details i{
+    color: #333;
+    font-size: 25px;
+}
+
+/* Boxes*/
+.home-section .home-content{
+    position: relative;
+    padding-top: 5px;
+}
+.home-section .box{
+    padding: 0px;
+    margin: 0px;
+}
+.home-content .overview-boxes{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    overflow: hidden;
+    list-style: none;
+}
+.home-content .overview-boxes .box{
+    width: calc(100% / 4 - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 5px;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 0 5px 10px;
+    list-style: none;
+    float: left;
+    margin: 30px 10px 10px 5px;
+    box-sizing: border-box;
+}
+.home-content .overview-boxes .box:hover{
+    opacity: 0.9;
+}
+.home-content .overview-boxes .box-topic:hover{
+    background: cornflowerblue;
+    color: cornsilk;
+}
+.home-content .overview-boxes .box-topic{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.home-content .overview-boxes .number{
+    font-size: 35px;
+    font-weight: 500;
+    margin-top: -5px;
+    display: inline-block;
+}
+.overview-boxes .indicator{
+    display: flex;
+    align-items: center;
+}
+.overview-boxes .indicator i{
+    height: 25px;
+    width: 25px;
+    background: #8FDACB;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.overview-boxes .indicator i.down{
+    background: #e87d88;
+}
+.overview-boxes .indicator .text{
+    font-size: 11px;
+}
+.overview-boxes .box .cart3{
+    font-size: 32px;
+    font-weight: 500;
+    height: 50px;
+    width: 50px;
+    background: #cce5ff;
+    color: #66b0ff;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 12px;
+}
+.overview-boxes .box .cart.two{
+    background: #8fd489;
+    color: #2BD47D;
+}
+.overview-boxes .box .cart.three{
+    background: #e0d67c;
+    color: #dd950f;
+}
+.overview-boxes .box .cart.four{
+    background: #e0b0b5;
+    color: #e87d88;
+}
+.overview-boxes .box .cart.five{
+    background: #b0b5e0;
+    color: #4e58e2;
+}
+.overview-boxes .box .cart.six{
+    background: #d7ff8c;
+    color: #faeb68;
+}
+.overview-boxes .box .cart.seven{
+    background: #e9735f;
+    color: #f1081f;
+}
+.home-section .sales-boxes{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.home-section .sales-boxes .recent-sale{
+    width: 65%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+.home-section .sales-boxes .sales-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.home-section .sales-boxes .box .title{
+    font-size: 24px;
+    font-weight: 500;
+}
+.home-section .sales-boxes .box .topic{
+    font-size: 20px;
+    font-weight: 500;
+}
+.home-section .sales-boxes .box li{
+    list-style: none;
+    margin: 8px 0;
+}
+.sales-boxes .box li a{
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.sales-boxes .button{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.sales-boxes .button a{
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    background: #0A2558;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.sales-boxes .button a:hover{
+    background: #0d3073;
+}
+
+/* right Side*/
+.home-section .sales-boxes .top-sales{
+    width: 35%;
+    margin-left: 20px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 12px;
+}
+.sales-boxes .top-sales li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sales-boxes .top-sales li a{
+    display: flex;
+    align-items: center;
+}
+.sales-boxes .top-sales img{
+    height: 8px;
+    width: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/*Responsive media query*/
+@media (max-width: 1216px) {
+    .sidebar{
+        width: 60px;
+    }
+    .sidebar.active{
+        width: 220;
+    }
+    .home-section{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .sidebar.active ~ .home-section{
+        width: calc(100% - 220px);
+        left: 220px;
+    }
+    .home-section nav{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .sidebar.active ~ .home-section nav{
+        width: calc(100% - 220px);
+        left: 220px;
+    }
+    @media (max-width: 1078px) {
+        .home-section .sales-boxes{
+            flex-direction: column;
+        }
+        .home-section .sales-boxes .box{
+            margin-bottom: 20px;
+            width: 100%;
+            overflow-x: scroll;
+        }
+        .home-section .sales-boxes .top-sales{
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 1018px) {
+        .home-content .overview-boxes .box{
+            width: calc(100% / 2 - 15px);
+            margin-bottom: 15px;
+        }
+    @media (max-with: 650px) {
+        .home-section nav .sidebar.button .dashboard,
+        nav .profile-details .admin_name,
+        nav .profile-details i{
+            display: none;
+        }
+        .home-section nav .profile-details{
+            min-width: 50px;
+            height: 50px;
+        }
+        .home-content .overview-boxes .box{
+            width: 100%;
+        }
+        .home-section .sales-boxes .sales-details{
+            width: 590px;
+        }
+        
+        
+    }
+    }
+}
+
+

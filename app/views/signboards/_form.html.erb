@@ -1,0 +1,64 @@
+<%= form_with(model: signboard) do |form| %>
+  <% if signboard.errors.any? %>
+    <div id="error_explanation">
+    
+      <h2><%= pluralize(signboard.errors.count, "error") %> prohibited this signboard from being saved:</h2>
+
+      <ul>
+        <% signboard.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.text_field :width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.number_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address %>
+  </div>
+
+  <!-Newsletter->
+  <section class="bg-primary text-light p-5">
+   <div class="container">
+    <div class="d-md-flex justify-content-between
+    align-items-center">
+    <h3 <div class="field">
+    <%= form.label :owner_id %>
+    <%= collection_select(:signboard, :owner_id, Owner.all, :id, :frst_name, {:selected => signboard.owner_id}) %>
+  </div>
+
+  <div class="actions-container">
+    <%= form.submit %>
+  </div> </h3>
+    </div>
+   </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+<% end %>
