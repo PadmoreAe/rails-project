@@ -1,7 +1,7 @@
 
 
 <h1>Owners</h1>
-<table class="table stripped" >
+<table id="table_id" class="table stripped" >
   <thead>
     <tr>
       <th>Frst name</th>
@@ -9,7 +9,9 @@
       <th>Phone number</th>
       <th>Email</th>
       <th>Address</th>
-      <th colspan="3"></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -32,3 +34,19 @@
 <br>
 
 <%= link_to 'New Owner', new_owner_path %>
+
+
+
+
+<% content_for :page_scripts do %>
+  <script>
+    function readyy(){
+      console.log("heyyy");
+       $("#table_id").DataTable({
+        pageLength: 50
+       })
+    }
+    $(document).ready(readyy)
+  </script>
+
+<% end %>
