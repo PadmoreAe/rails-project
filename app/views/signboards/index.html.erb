@@ -1,4 +1,7 @@
-<table class="table">
+<br />
+<br />
+
+<table id="sboard" class="table">
   <thead>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -51,3 +54,16 @@
       </div>
   </div>
 </div>
+
+<% content_for :page_scripts do %>
+  <script>
+    function readyy(){
+      console.log("heyyy");
+       $("#sboard").DataTable({
+        pageLength: 50
+       })
+    }
+    $(document).ready(readyy)
+  </script>
+
+<% end %>
